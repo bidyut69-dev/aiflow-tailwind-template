@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI SaaS Landing Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Dark mode config
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition duration-300">
+
+  <!-- Navbar -->
+  <header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-400">AIFlow</h1>
+      
+      <!-- Desktop nav -->
+      <nav class="space-x-6 hidden md:block">
+        <a href="#" class="text-gray-600 dark:text-gray-200 hover:text-blue-600">Home</a>
+        <a href="#" class="text-gray-600 dark:text-gray-200 hover:text-blue-600">Features</a>
+        <a href="#" class="text-gray-600 dark:text-gray-200 hover:text-blue-600">Pricing</a>
+        <a href="#" class="text-gray-600 dark:text-gray-200 hover:text-blue-600">Login</a>
+      </nav>
+
+      <!-- Dark mode toggle -->
+      <button id="themeToggle" class="ml-4 text-xl md:ml-6">
+        🌞
+      </button>
+
+      <!-- Mobile menu button -->
+      <button id="menuBtn" class="md:hidden text-2xl">
+        ☰
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <div id="mobileMenu" class="md:hidden px-4 py-4 hidden">
+      <a href="#" class="block mb-2 text-gray-700 dark:text-gray-100">Home</a>
+      <a href="#" class="block mb-2 text-gray-700 dark:text-gray-100">Features</a>
+      <a href="#" class="block mb-2 text-gray-700 dark:text-gray-100">Pricing</a>
+      <a href="#" class="block text-gray-700 dark:text-gray-100">Login</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="min-h-[80vh] flex flex-col justify-center items-center text-center px-4">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Supercharge Your Workflow with AI</h1>
+    <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-2xl">AIFlow helps you automate daily tasks, generate content, and grow faster — all with one smart tool.</p>
+    <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Start Free Trial</a>
+  </section>
+
+  <!-- Features -->
+  <section class="py-16 px-4 bg-white dark:bg-gray-800">
+    <h2 class="text-3xl font-bold text-center mb-10">Key Features</h2>
+    <div class="max-w-6xl mx-auto grid gap-6 md:grid-cols-3">
+      <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">AI Writing</h3>
+        <p class="text-gray-600 dark:text-gray-300">Generate high-quality content instantly using GPT-powered writing tools.</p>
+      </div>
+      <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Task Automation</h3>
+        <p class="text-gray-600 dark:text-gray-300">Automate routine workflows and boost your productivity.</p>
+      </div>
+      <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Smart Analytics</h3>
+        <p class="text-gray-600 dark:text-gray-300">Get data-driven insights to make better decisions faster.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-16 px-4 bg-gray-100 dark:bg-gray-900">
+    <h2 class="text-3xl font-bold text-center mb-10">Simple Pricing</h2>
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-8 shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Starter Plan</h3>
+        <p class="text-3xl font-bold mb-4">$9/mo</p>
+        <ul class="text-gray-600 dark:text-gray-300 space-y-2 mb-6">
+          <li>✔️ AI Writing Tools</li>
+          <li>✔️ 5 Projects</li>
+          <li>✔️ Email Support</li>
+        </ul>
+        <a href="#" class="block text-center bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Choose Plan</a>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-8 shadow hover:shadow-lg transition border-2 border-blue-600">
+        <h3 class="text-xl font-semibold mb-2">Pro Plan</h3>
+        <p class="text-3xl font-bold mb-4">$29/mo</p>
+        <ul class="text-gray-600 dark:text-gray-300 space-y-2 mb-6">
+          <li>✔️ Unlimited Projects</li>
+          <li>✔️ All AI Tools</li>
+          <li>✔️ Priority Support</li>
+        </ul>
+        <a href="#" class="block text-center bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Choose Plan</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white dark:bg-gray-800 py-6 mt-16 shadow-inner">
+    <div class="text-center text-gray-600 dark:text-gray-300 text-sm">
+      &copy; 2025 AIFlow. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Dark mode toggle
+    const themeBtn = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    themeBtn.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      themeBtn.textContent = html.classList.contains('dark') ? '🌙' : '🌞';
+    });
+  </script>
+
+</body>
+</html>
